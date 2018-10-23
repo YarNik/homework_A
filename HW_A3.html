@@ -1,0 +1,71 @@
+<script>
+	var amount = +prompt("Input amount(in UAH)");
+	var quantity_every = 10;
+	var quant_500;
+	var resid_500;
+	var quant_200;
+	var resid_200;
+	var quant_100;
+	var resid_100;
+	var quant_50;
+	var resid_50;
+	var quant_20;
+	var resid_20;
+	var quant_10;
+	var resid_10;
+	var quant_5;
+	var resid_5;
+	var quant_2;
+	var resid_2;
+	var quant_1;
+			
+	quant_500 = parseInt(amount / 500);
+	if(quant_500 <= quantity_every){resid_500 = amount % 500}
+		else{quant_500 = quantity_every; resid_500 = amount - 500*quantity_every};
+		
+	quant_200 = parseInt(resid_500 / 200);
+	if(quant_200 <= quantity_every){resid_200 = resid_500 % 200}
+		else{quant_200 = quantity_every; resid_200 = resid_500 - 200*quantity_every};
+	
+	quant_100 = parseInt(resid_200 / 100);
+	if(quant_100 <= quantity_every){resid_100 = resid_200 % 100}
+		else{quant_100 = quantity_every; resid_100 = resid_200 - 100*quantity_every};
+		
+	quant_50 = parseInt(resid_100 / 50);
+	if(quant_50 <= quantity_every){resid_50 = resid_100 % 50}
+		else{quant_50 = quantity_every; resid_50 = resid_100 - 50*quantity_every};
+		
+	quant_20 = parseInt(resid_50 / 20);
+	if(quant_20 <= quantity_every){resid_20 = resid_50 % 20}
+		else{quant_20 = quantity_every; resid_20 = resid_50 - 20*quantity_every};
+	
+	quant_10 = parseInt(resid_20 / 10);
+	if(quant_10 <= quantity_every){resid_10 = resid_20 % 10}
+		else{quant_10 = quantity_every; resid_10 = resid_20 - 10*quantity_every};
+
+	quant_5 = parseInt(resid_10 / 5);
+	if(quant_5 <= quantity_every){resid_5 = resid_10 % 5}
+		else{quant_5 = quantity_every; resid_5 = resid_10 - 5*quantity_every};
+		
+	quant_2 = parseInt(resid_5 / 2);
+	if(quant_2 <= quantity_every){resid_2 = resid_5 % 2}
+		else{quant_2 = quantity_every; resid_2 = resid_5 - 2*quantity_every};
+	
+	quant_1 = parseInt(resid_2 / 1);
+	if(quant_1 > quantity_every){resid_1 = resid_2 - quantity_every;
+										alert(`SORRY.
+										Your amount ${amount} UAH is very large.
+										Make it ${resid_1} UAH less.`)}
+		else{var quantity_total = quant_500 + quant_200 + quant_100 + quant_50 + quant_20 + quant_10 + quant_5 + quant_2 + quant_1;
+	alert(`Amount: ${amount} UAH.
+	"500" - ${quant_500}
+	"200" - ${quant_200}
+	"100" - ${quant_100}
+	"50" - ${quant_50}
+	"20" - ${quant_20}
+	"10" - ${quant_10}
+	"5" - ${quant_5}
+	"2" - ${quant_2}
+	"1" - ${quant_1}
+	Total: ${quantity_total}`);}
+</script>

@@ -1,0 +1,7 @@
+<script>
+	var amount = +prompt("Input sum (in UAH)");
+		
+	var income_day = ((amount * 0.22 * (100 - 18 - 1.5)/100) /365).toFixed(2); 
+	alert(`Deposit amount: ${amount} UAH.
+	Daily income: ${income_day} UAH.`)
+</script>

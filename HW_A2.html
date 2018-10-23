@@ -1,0 +1,15 @@
+<script>
+	var amount = +prompt("Input amount (in USD)");
+	
+	var tax_amount;
+	if(amount < 9526){tax_amount = 0.1 * amount}
+		else if(amount < 38701){tax_amount = 952.5 + 0.12 * (amount - 9525)}
+		else if(amount < 82501){tax_amount = 4453 + 0.22 * (amount - 38700)}
+		else if(amount < 157501){tax_amount = 14089.5 + 0.24 * (amount - 82500)}
+		else if(amount < 200001){tax_amount = 32089.5 + 0.32 * (amount - 157500)}
+		else if(amount < 500001){tax_amount = 45689.5 + 0.35 * (amount - 200000)}
+		else {tax_amount = 150689.5 + 0.37 * (amount - 500000)};
+		
+	alert(`Amount: ${amount} USD.
+	Tax amount: ${tax_amount.toFixed(2)} USD.`)
+</script>
